@@ -1,0 +1,19 @@
+{
+  "name": "dl-plugins-alunas",
+  "owner": { "name": "DL Estudio", "email": "daniellelemosmkt@gmail.com" },
+  "metadata": {
+    "description": "Os plugins do Meu Funcionario, para as alunas do Modo Automatico."
+  },
+  "plugins": [
+    {
+      "name": "funcionario-presenca",
+      "source": "./funcionario-presenca",
+      "description": "Le o seu Instagram, olha as concorrentes, escreve o diagnostico e monta a estrategia de crescimento e de venda."
+    },
+    {
+      "name": "funcionario-conteudo",
+      "source": "./funcionario-conteudo",
+      "description": "Escreve os conteudos da semana na sua marca, poe para voce aprovar, agenda o aprovado e traz o relatorio do que funcionou."
+    }
+  ]
+}

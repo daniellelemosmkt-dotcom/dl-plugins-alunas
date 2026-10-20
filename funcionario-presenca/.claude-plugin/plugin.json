@@ -1,0 +1,7 @@
+{
+  "name": "funcionario-presenca",
+  "version": "0.1.0",
+  "description": "Le o seu Instagram, olha as concorrentes, escreve o diagnostico e monta a estrategia. Escreve nas telas Minhas redes, Meu Instagram e Meu planejamento do Meu Funcionario.",
+  "author": { "name": "DL Estudio" },
+  "keywords": ["instagram", "estrategia", "diagnostico", "redes sociais"]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "funcionario-conteudo",
+  "version": "0.1.0",
+  "description": "Escreve os conteudos da semana na sua marca, gera a arte na sua maquina, poe para voce aprovar, agenda o aprovado no Metricool e monta o relatorio do que funcionou melhor.",
+  "author": { "name": "DL Estudio" },
+  "keywords": ["conteudo", "carrossel", "reels", "agendamento", "relatorio"]
+}
