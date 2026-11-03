@@ -11,6 +11,20 @@ O plugin traz **moldes genéricos** em `${CLAUDE_PLUGIN_ROOT}/moldes/`. Eles sã
 Na primeira vez, você lê a marca dela e reescreve os moldes com as cores, as fontes e o jeito dela.
 Depois disso, toda arte sai pronta, sem ela escolher nada.
 
+São dois moldes, e eles servem para coisas diferentes:
+
+- **`carrossel.html`**: o post de marca, com fundo, cores e fontes dela. Use quando o conteúdo é o
+  texto: método, lista, passo a passo, antes e depois contado.
+- **`nativo.html`**: o post que parece feito dentro do Instagram, com a foto ocupando o card inteiro
+  e o texto branco em contorno preto por cima. Use quando a foto é o conteúdo: bastidor, produto na
+  mão, print de tela, pessoa usando. Aqui a cor da marca entra em uma palavra por card, no máximo.
+
+Na dúvida entre os dois, pergunte a ela:
+
+> Este post se entende pela foto ou pelo texto?
+
+Foto, vai no nativo. Texto, vai no carrossel.
+
 A arte é gerada **na máquina dela**, em PNG. Não depende de plano de ferramenta nenhuma.
 
 ## Antes de qualquer coisa
