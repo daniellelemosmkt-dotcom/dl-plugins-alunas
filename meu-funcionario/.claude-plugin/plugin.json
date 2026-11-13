@@ -1,0 +1,7 @@
+{
+  "name": "meu-funcionario",
+  "version": "1.0.0",
+  "description": "O seu funcionario completo: le o seu Instagram, monta a estrategia e o calendario, escreve os conteudos, gera a arte, edita os seus videos, acha clientes nos comentarios e agenda o que voce aprovar.",
+  "author": { "name": "DL Estudio" },
+  "keywords": ["instagram", "conteudo", "video", "edicao", "calendario", "agendamento"]
+}

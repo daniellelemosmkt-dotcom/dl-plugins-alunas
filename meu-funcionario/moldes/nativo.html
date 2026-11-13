@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Molde nativo</title>
+<!--
+  MOLDE NATIVO · 1080x1350
+
+  O post que parece feito dentro do Instagram: a foto ocupa o card inteiro e o texto fica por cima,
+  em Poppins negrito branco com contorno preto, do jeito que o aplicativo escreve.
+
+  Serve para quando a foto é o conteúdo: bastidor, produto na mão, antes e depois, print de tela.
+
+  Como usar:
+  - Cada card é uma <section class="card">. Troque o endereço da foto em --foto.
+  - O texto de cada card vai dentro de <p class="fala">. Uma ideia por card, poucas linhas.
+  - Para gerar o PNG, abra num navegador e tire um print de cada .card, em 1080x1350.
+
+  O que mexer:
+  - --tamanho-texto: 72px é o equivalente ao texto do Instagram visto no celular. Diminua para 56px
+    quando o card tiver muita frase, aumente para 88px quando for uma frase só.
+  - A posição do texto muda por card, com as classes "alto", "meio" e "baixo". Varie entre os cards
+    e escolha a área mais lisa da foto, nunca o rosto.
+-->
+<style>
+:root{
+  --tamanho-texto:72px;
+  --contorno:4px;
+  /* a cor do destaque vem de dados/marca.js, e é a única cor do post */
+  --destaque:#7A7A7A;
+  --sobre-destaque:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#888;display:flex;flex-direction:column;align-items:center;gap:24px;padding:24px}
+
+.card{
+  width:1080px;height:1350px;flex:none;position:relative;overflow:hidden;
+  background:#1a1a1a center/cover no-repeat;
+  display:flex;flex-direction:column;
+  font-family:Poppins,"Segoe UI",system-ui,sans-serif;
+}
+/* a foto sangra: ocupa o card todo, sem borda e sem moldura */
+.card::before{
+  content:"";position:absolute;inset:0;
+  background:var(--foto) center/cover no-repeat;
+}
+
+/* um escurecimento de leve, só onde o texto cai, para a letra nunca sumir na foto clara */
+.card::after{
+  content:"";position:absolute;left:0;right:0;height:46%;
+  background:linear-gradient(to bottom,rgba(0,0,0,.28),rgba(0,0,0,0));
+  opacity:.9;
+}
+.card.baixo::after{bottom:0;background:linear-gradient(to top,rgba(0,0,0,.28),rgba(0,0,0,0))}
+.card.meio::after{display:none}
+
+.texto{position:relative;z-index:2;padding:86px 78px;display:flex;width:100%}
+.card.alto .texto{margin-bottom:auto}
+.card.meio .texto{margin:auto 0}
+.card.baixo .texto{margin-top:auto}
+
+.fala{
+  font-size:var(--tamanho-texto);line-height:1.22;font-weight:700;color:#fff;
+  letter-spacing:-.01em;max-width:86%;
+  /* o contorno preto do texto nativo, feito com sombra para pegar em qualquer navegador */
+  text-shadow:
+    calc(var(--contorno) * -1) calc(var(--contorno) * -1) 0 #000,
+    var(--contorno) calc(var(--contorno) * -1) 0 #000,
+    calc(var(--contorno) * -1) var(--contorno) 0 #000,
+    var(--contorno) var(--contorno) 0 #000,
+    0 calc(var(--contorno) * -1) 0 #000,
+    0 var(--contorno) 0 #000,
+    calc(var(--contorno) * -1) 0 0 #000,
+    var(--contorno) 0 0 #000,
+    0 8px 26px rgba(0,0,0,.45);
+}
+/* uma palavra em destaque, na cor da marca. Use pouco: uma por card, no máximo */
+.fala b{color:var(--destaque);font-weight:700}
+
+/* o selo do @ no último card, discreto */
+.assina{
+  position:absolute;z-index:2;left:78px;bottom:70px;
+  font-size:34px;font-weight:600;color:#fff;letter-spacing:.02em;
+  text-shadow:0 2px 0 #000,0 0 18px rgba(0,0,0,.6);
+}
+</style>
+</head>
+<body>
+
+<!-- CAPA: uma frase só, grande, na parte lisa da foto -->
+<section class="card alto" style="--foto:url('../fotos/01.jpg')">
+  <div class="texto"><p class="fala">A frase que faz a pessoa parar de rolar</p></div>
+</section>
+
+<!-- MIOLO: uma ideia por card, posição variando -->
+<section class="card baixo" style="--foto:url('../fotos/02.jpg')">
+  <div class="texto"><p class="fala">O que ninguém te contou sobre <b>isso</b></p></div>
+</section>
+
+<section class="card meio" style="--foto:url('../fotos/03.jpg')">
+  <div class="texto"><p class="fala">O jeito simples de resolver, em uma frase curta</p></div>
+</section>
+
+<!-- ÚLTIMO: o convite, com o @ embaixo -->
+<section class="card baixo" style="--foto:url('../fotos/04.jpg')">
+  <div class="texto"><p class="fala">Salva este post para não esquecer</p></div>
+  <span class="assina">@seu_perfil</span>
+</section>
+
+</body>
+</html>
